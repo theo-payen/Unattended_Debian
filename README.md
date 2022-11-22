@@ -5,4 +5,9 @@ docker run --name debian_bash --rm -i -t debian bash
 
 
 
-docker build -t img .
+
+docker build -t  imgiso .
+
+docker run -v $PWD/isofile:/iso/ imgiso
+
+https://www.librebyte.net/en/systems-deployment/unattended-debian-installation/

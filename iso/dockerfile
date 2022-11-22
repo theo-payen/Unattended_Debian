@@ -1,0 +1,13 @@
+FROM debian:latest
+
+WORKDIR /iso
+COPY . .
+RUN apt update -y
+RUN apt install xorriso -y
+RUN apt install curl -y
+RUN curl -o old-debian.iso https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-11.5.0-amd64-netinst.iso
+
+RUN xorriso -osirrox on -indev old-debian.iso  -extract / isofiles/
+
+
+CMD ["ls -la"]
