@@ -1,0 +1,18 @@
+FROM debian:latest
+
+
+#RUN curl -LO# https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-10.8.0-amd64-netinst.iso
+#RUN apt -y install xorriso
+#RUN xorriso -osirrox on -indev debian-10.1.0-amd64-netinst.iso  -extract / isofiles/
+
+
+
+
+#COPY . 
+WORKDIR /iso
+RUN apt update
+RUN apt install whois -y
+RUN touch test
+RUN echo $(echo "root" | mkpasswd -s -H MD5) > test
+CMD ["echo ${NGINX_PORT}"]
+

@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  iso:
+    image: iso
+    container_name: iso
+    environment: 
+      - URL_ISO=test
+    build:
+      context: .
+      dockerfile: Dockerfile
