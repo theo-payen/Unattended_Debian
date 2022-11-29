@@ -11,3 +11,6 @@ docker build -t  imgiso .
 docker run -v $PWD/isofile:/iso/ imgiso
 
 https://www.librebyte.net/en/systems-deployment/unattended-debian-installation/
+
+
+docker run arg:v2 --build-arg WELCOME_USER=Savio

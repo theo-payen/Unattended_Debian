@@ -14,5 +14,5 @@ RUN apt update
 RUN apt install whois -y
 RUN touch test
 RUN echo $(echo "root" | mkpasswd -s -H MD5) > test
-CMD ["echo ${NGINX_PORT}"]
+CMD ["echo ${URL_ISO}"]
 
